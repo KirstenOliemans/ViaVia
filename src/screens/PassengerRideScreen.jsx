@@ -5,14 +5,14 @@ import { MapContainer, TileLayer, Marker, Polyline } from 'react-leaflet';
 import { useApp } from '../context/AppContext';
 import './PassengerRideScreen.css';
 
-const ICO_BELL     = 'https://www.figma.com/api/mcp/asset/59948073-7e06-4ba2-a680-5f416f59ded3';
-const ICO_CAR      = 'https://www.figma.com/api/mcp/asset/df9fcc25-b2cc-4fc1-b6f8-c6185669e9e7';
-const ICO_LOCATION = 'https://www.figma.com/api/mcp/asset/dda2a857-50bd-4f19-a578-c6c5dbc1cdc4';
-const ICO_FARE     = 'https://www.figma.com/api/mcp/asset/677ef771-20ca-4de6-a237-65ee0ed4a167';
-const ICO_CLOCK    = 'https://www.figma.com/api/mcp/asset/af30fb73-0d03-4d4e-a15a-0799391019db';
-const ICO_PHONE    = 'https://www.figma.com/api/mcp/asset/d55fd7be-baf6-4ff7-9282-8ab1ac8e6b7a';
-const ICO_PROFILE  = 'https://www.figma.com/api/mcp/asset/b077ac77-cfbb-4762-bf28-081ec92c18ce';
-const ICO_VERIFIED = 'https://www.figma.com/api/mcp/asset/d36eaba8-d17f-4096-b214-819269c26718';
+const ICO_BELL     = '/icons/bell-notif-ico.svg';
+const ICO_CAR      = '/icons/car-ride-ico.svg';
+const ICO_LOCATION = '/icons/location-marker-ico.svg';
+const ICO_FARE     = '/icons/fare-ico.svg';
+const ICO_CLOCK    = '/icons/clock-ico.svg';
+const ICO_PHONE    = '/icons/phone-ico.svg';
+const ICO_PROFILE  = '/icons/profile-ico.svg';
+const ICO_VERIFIED = '/icons/verified-ico.svg';
 
 // Mock driver data
 const MOCK_DRIVER = {

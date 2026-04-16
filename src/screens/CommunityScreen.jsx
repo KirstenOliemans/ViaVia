@@ -3,16 +3,14 @@ import { ChevronRight } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import './CommunityScreen.css';
 
-// ── Figma asset URLs — refreshed from node 173:5665 (current session) ──
-const VERIFIED_ICO = 'https://www.figma.com/api/mcp/asset/d36eaba8-d17f-4096-b214-819269c26718';
-const PICKUP_ICO   = 'https://www.figma.com/api/mcp/asset/73339414-d5fd-40dc-8756-da25060169ee';
-const DROPOFF_ICO  = 'https://www.figma.com/api/mcp/asset/f3c3fc92-14f9-47a4-b01a-63899fe5d8fb';
-const CLOCK_ICO    = 'https://www.figma.com/api/mcp/asset/b85189da-355f-4f9f-b48e-f5df2fdd99ec';
-const DOT_GREEN    = 'https://www.figma.com/api/mcp/asset/c684a259-5e8f-4f0a-80a7-1fcb551aa432';
-const DOT_ORANGE   = 'https://www.figma.com/api/mcp/asset/35e1b278-b9a6-404b-9aab-654cc36e9867';
-const LOC_ON_ICO   = 'https://www.figma.com/api/mcp/asset/a6d1671b-7a90-4b73-8f14-82211d35a3b7';
-// Check icon for "Accepted" button state
-const CHECK_ICO    = 'https://www.figma.com/api/mcp/asset/15951bfa-cb8e-4c91-8054-99fda47a1d09';
+const VERIFIED_ICO = '/icons/verified-badge.svg';
+const PICKUP_ICO   = '/icons/pickup-icon.svg';
+const DROPOFF_ICO  = '/icons/dropoff-icon.svg';
+const CLOCK_ICO    = '/icons/schedule-icon.svg';
+const DOT_GREEN    = '/icons/dot-green.svg';
+const DOT_ORANGE   = '/icons/dot-orange.svg';
+const LOC_ON_ICO   = '/icons/loc-on.svg';
+const CHECK_ICO    = '/icons/check-icon.svg';
 
 // ── Adapter: normalize AppContext ride request → card shape ──────
 function toCardShape(req) {

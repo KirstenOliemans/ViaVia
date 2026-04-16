@@ -3,11 +3,11 @@ import './NotificationsPanel.css';
 
 // ── Figma asset URLs (node 211:5902) ─────────────────────────────
 // Close X icon — Figma: size-[11.667px], sits next to "Mark all read" with gap-[20px]
-const CLOSE_ICO = 'https://www.figma.com/api/mcp/asset/cd9caee5-4bae-41e3-b68b-778d9f199827';
+const CLOSE_ICO = '/icons/close-notif-ico.svg';
 // Ride notification icon (directions_car) — shown in #f7e3de circle
-const CAR_ICO   = 'https://www.figma.com/api/mcp/asset/74d87367-a156-4e62-a05b-f2b156691569';
+const CAR_ICO   = '/icons/car-ico.svg';
 // Wallet notification icon (credit_card) — shown in rgba(52,199,89,0.12) circle
-const CARD_ICO  = 'https://www.figma.com/api/mcp/asset/0c752af6-3dff-4750-bc53-e0878567ea90';
+const CARD_ICO  = '/icons/card-ico.svg';
 
 // Figma: ride → #f7e3de (primary/10), wallet → rgba(52,199,89,0.12) green tint
 const TYPE_META = {

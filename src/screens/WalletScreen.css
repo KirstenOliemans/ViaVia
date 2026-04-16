@@ -110,12 +110,16 @@
   border: none;
   cursor: pointer;
   border-radius: 20px;
-  transition: background 0.15s;
+  transition: transform 0.15s;
+}
+
+.ws-action-btn:active {
+  transform: scale(0.93);
 }
 
 .ws-action-icon {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 44px;
   background: #f7e3de; /* --primary/10 */
   display: flex;
@@ -124,12 +128,20 @@
   flex-shrink: 0;
 }
 
+/* Figma: Transactions icon has two 20x24 arrow containers, overlapping by -4px */
 .ws-action-icon--tx {
   flex-direction: row;
   gap: 0;
-  padding: 0 6px;
+  padding: 6px 4px 6px 0;
 }
 
+.ws-action-icon--tx .ws-action-img {
+  width: 12px;
+  height: 14px;
+  margin-right: -4px;
+}
+
+/* Figma: 24px clip box with inset 20.83% → ~14px visible arrow */
 .ws-action-img {
   width: 14px;
   height: 14px;
@@ -206,8 +218,13 @@
   white-space: nowrap;
   background: #ffffff;
   color: #49454f;
-  transition: background 0.15s, color 0.15s;
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.1s;
   flex-shrink: 0;
+}
+.ws-chip:active {
+  transform: scale(0.95);
 }
 .ws-chip.active {
   background: #e85733;
@@ -228,6 +245,23 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  animation: ws-deal-enter 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.ws-deal-card:nth-child(1) { animation-delay: 0s; }
+.ws-deal-card:nth-child(2) { animation-delay: 0.06s; }
+.ws-deal-card:nth-child(3) { animation-delay: 0.12s; }
+.ws-deal-card:nth-child(4) { animation-delay: 0.18s; }
+
+@keyframes ws-deal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .ws-deal-top {
@@ -258,7 +292,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
 }
 
 .ws-deal-name {
@@ -301,7 +335,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
 }
 
 .ws-deal-credits {
@@ -314,7 +348,7 @@
 }
 
 .ws-redeem-btn {
-  background: #f7e3de;
+  background: #f5f5f5;
   border: none;
   border-radius: 8px;
   padding: 12px;
@@ -324,7 +358,12 @@
   font-weight: 600;
   color: #ff6038;
   white-space: nowrap;
-  transition: background 0.15s;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.ws-redeem-btn:active {
+  transform: scale(0.96);
+  background: #ececec;
 }
 
 /* ── FAB ───────────────────────────────────────────────────────── */

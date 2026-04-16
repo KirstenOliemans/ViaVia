@@ -1,10 +1,9 @@
 import { useApp } from '../context/AppContext';
 import './BottomNav.css';
 
-// Fresh Figma assets — sourced from node 173:5665 (Community screen, current session)
-const HOME_ICON   = 'https://www.figma.com/api/mcp/asset/69852c79-c351-412a-a47f-27aa166180ca';
-const WALLET_ICON = 'https://www.figma.com/api/mcp/asset/77251ffb-f414-470a-972f-9966c646cf6c';
-const USERS_ICON  = 'https://www.figma.com/api/mcp/asset/5c342526-246e-4ca7-8135-d931d29fab40';
+const HOME_ICON   = '/icons/home-icon.svg';
+const WALLET_ICON = '/icons/wallet-icon.svg';
+const USERS_ICON  = '/icons/users-icon.svg';
 
 const TABS = [
   { id: 'home',      icon: HOME_ICON,   label: 'Home',      cls: 'nav-home-btn' },

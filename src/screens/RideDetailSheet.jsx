@@ -7,13 +7,13 @@ import './RideDetailSheet.css';
 
 // ── Figma asset URLs — refreshed from node 173:5665 (current session) ──
 // Using same assets as CommunityScreen for perfect consistency
-const ICO_BELL    = 'https://www.figma.com/api/mcp/asset/59948073-7e06-4ba2-a680-5f416f59ded3';
-const ICO_PICKUP  = 'https://www.figma.com/api/mcp/asset/73339414-d5fd-40dc-8756-da25060169ee';
-const ICO_DROPOFF = 'https://www.figma.com/api/mcp/asset/f3c3fc92-14f9-47a4-b01a-63899fe5d8fb';
-const ICO_COST    = 'https://www.figma.com/api/mcp/asset/cce1de4c-4758-4736-89fd-aa21379c1f50';
-const ICO_TIME    = 'https://www.figma.com/api/mcp/asset/b85189da-355f-4f9f-b48e-f5df2fdd99ec';
-const VERIFIED_ICO = 'https://www.figma.com/api/mcp/asset/d36eaba8-d17f-4096-b214-819269c26718';
-const CHECK_ICO   = 'https://www.figma.com/api/mcp/asset/15951bfa-cb8e-4c91-8054-99fda47a1d09';
+const ICO_BELL    = '/icons/bell-notif-ico.svg';
+const ICO_PICKUP  = '/icons/pickup-arrow-ico.svg';
+const ICO_DROPOFF = '/icons/dropoff-arrow-ico.svg';
+const ICO_COST    = '/icons/cost-ico.svg';
+const ICO_TIME    = '/icons/time-ico.svg';
+const VERIFIED_ICO = '/icons/verified-ico.svg';
+const CHECK_ICO   = '/icons/check-icon.svg';
 
 // ── Custom map pin icons ─────────────────────────────────────────
 const makePinIcon = (color) => L.divIcon({

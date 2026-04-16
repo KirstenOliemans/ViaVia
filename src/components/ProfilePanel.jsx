@@ -3,16 +3,16 @@ import { useApp } from '../context/AppContext';
 import './ProfilePanel.css';
 
 // ── Figma asset URLs (node 211:6118 — refreshed Apr 16 2026) ─────────────────
-const AVATAR_ICO   = 'https://www.figma.com/api/mcp/asset/f9c95422-67b2-45ff-ac70-0b5fc7dd1e67';
-const CLOSE_ICO    = 'https://www.figma.com/api/mcp/asset/1eef8c6e-dedb-4569-bcda-8cc55d73cf47';
+const AVATAR_ICO   = '/icons/avatar-ico.svg';
+const CLOSE_ICO    = '/icons/close-ico.svg';
 // Note: Figma chevron asset is 5×10px content inside 24px slot — renders as filled triangle
 // at full size; using Lucide ChevronRight matches the thin-arrow style in the Figma screenshot
 // Menu icons (leading)
-const ICON_PERSON  = 'https://www.figma.com/api/mcp/asset/ddb2057b-8de1-4975-aa20-802878e62a70';
-const ICON_VEHICLE = 'https://www.figma.com/api/mcp/asset/af624d15-f420-45f7-8cc7-f9c6e8f935b5';
-const ICON_AVAIL   = 'https://www.figma.com/api/mcp/asset/e4503ceb-e3a3-4244-86bb-9c53ce4c551a';
-const ICON_FAV     = 'https://www.figma.com/api/mcp/asset/b639a727-9f27-4a44-aa1c-78c36d137f5f';
-const ICON_HISTORY = 'https://www.figma.com/api/mcp/asset/37749c53-2dc7-4124-9e79-9f78b3105bcd';
+const ICON_PERSON  = '/icons/person-ico.svg';
+const ICON_VEHICLE = '/icons/vehicle-ico.svg';
+const ICON_AVAIL   = '/icons/avail-ico.svg';
+const ICON_FAV     = '/icons/fav-ico.svg';
+const ICON_HISTORY = '/icons/history-ico.svg';
 
 // Figma: h-[40px], gap-[12px], items-center, py-[8px]
 // Icon items have a 24×24 leading slot; icon-less items start flush with the label

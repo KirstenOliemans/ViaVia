@@ -71,6 +71,11 @@
   gap: 8px;
 }
 
+/* Figma node 1:2095 — destination row uses 20px gap */
+.hs-loc-row.destination {
+  gap: 20px;
+}
+
 .hs-loc-icon-wrap {
   flex-shrink: 0;
   width: 48px;
@@ -172,6 +177,21 @@
   gap: 0;
   flex-shrink: 0;
   line-height: 1;
+}
+
+/* Figma arrow icons — 10x6.17 viewBox, rendered at ~10x6px */
+.hs-arrow-up {
+  width: 10px;
+  height: 6px;
+  display: block;
+}
+
+.hs-arrow-down {
+  width: 10px;
+  height: 6px;
+  display: block;
+  transform: rotate(180deg);
+  margin-top: -2px;
 }
 
 .hs-dt-info-row {

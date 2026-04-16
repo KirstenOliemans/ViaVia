@@ -1,9 +1,8 @@
 import { useApp } from '../context/AppContext';
 import './Header.css';
 
-// Figma asset URLs (valid 7 days from Apr 16 2026)
-const USER_ICON   = 'https://www.figma.com/api/mcp/asset/09bf7ea7-9ff3-402f-bc69-48f34d46e602';
-const BELL_ICON   = 'https://www.figma.com/api/mcp/asset/7444be7a-bb09-4257-98fe-fb4956982875';
+const USER_ICON   = '/icons/user-icon.svg';
+const BELL_ICON   = '/icons/bell-icon.svg';
 
 export default function Header() {
   const { setProfileOpen, setNotificationsOpen, unreadCount } = useApp();

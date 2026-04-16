@@ -14,12 +14,12 @@ import { useApp } from '../context/AppContext';
 import './RideRequestScreen.css';
 
 // ── Figma assets ─────────────────────────────────────────────────
-const ICO_BELL       = 'https://www.figma.com/api/mcp/asset/c974a3d8-7fd2-4147-a5e7-e383ca584664';
-const ICO_LOC_FROM   = 'https://www.figma.com/api/mcp/asset/4b4fd98e-fe0c-4f6a-affc-c3450c159d66';
-const ICO_CROSSHAIR  = 'https://www.figma.com/api/mcp/asset/247e738b-148c-4701-b850-38ecffa06306';
-const ICO_STAR_FROM  = 'https://www.figma.com/api/mcp/asset/4dae9a54-e63a-4a0b-9257-5e3f24c5c440';
-const ICO_STAR_TO    = 'https://www.figma.com/api/mcp/asset/ab6641a9-196b-4417-9163-22de23985757';
-const ICO_LOC_TO     = 'https://www.figma.com/api/mcp/asset/4a99e9fc-f8ab-46db-96df-62fe0be63693';
+const ICO_BELL       = '/icons/bell-ride-ico.svg';
+const ICO_LOC_FROM   = '/icons/loc-from-ico.svg';
+const ICO_CROSSHAIR  = '/icons/crosshair-ico.svg';
+const ICO_STAR_FROM  = '/icons/star-from-ico.svg';
+const ICO_STAR_TO    = '/icons/star-to-ico.svg';
+const ICO_LOC_TO     = '/icons/loc-to-ico.svg';
 
 // ── Live-location blue-dot icon ──────────────────────────────────
 const USER_DOT_ICON = L.divIcon({

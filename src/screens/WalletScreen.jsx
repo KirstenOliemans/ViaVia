@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import './WalletScreen.css';
 
-// ── Figma asset URLs (node 167:7594) ─────────────────────────────
-const ARROW_UP      = 'https://www.figma.com/api/mcp/asset/f44df449-a476-4413-ab20-87e7efe91d35';
-const ARROW_DOWN    = 'https://www.figma.com/api/mcp/asset/c62d2d66-eb0e-4da0-9375-d7a620b87214';
-const ARROW_TX_UP   = 'https://www.figma.com/api/mcp/asset/ea5f693f-2d62-4b5a-a726-90ce6cb83d4d';
-const ARROW_TX_DOWN = 'https://www.figma.com/api/mcp/asset/29688fb7-b1bc-4011-98b1-98e1ad89f474';
-const CALL_ICON     = 'https://www.figma.com/api/mcp/asset/a15ee280-038e-46d2-b05d-94dec4633474';
+const ARROW_UP      = '/icons/send-arrow.svg';
+const ARROW_DOWN    = '/icons/receive-arrow.svg';
+const ARROW_TX_UP   = '/icons/tx-arrow-up.svg';
+const ARROW_TX_DOWN = '/icons/tx-arrow-down.svg';
+const CALL_ICON     = '/icons/call-icon.svg';
 
 // ── Offer images — Unsplash/Picsum for each category ─────────────
 const IMG = {
@@ -118,7 +117,7 @@ export default function WalletScreen() {
             </div>
           </div>
 
-          <div className="ws-deals">
+          <div className="ws-deals" key={activeChip}>
             {deals.map(deal => (
               <div key={deal.id} className="ws-deal-card">
                 {/* Top row */}

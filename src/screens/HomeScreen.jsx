@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
-import { ChevronUp, ChevronDown } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import DateTimePicker from '../components/DateTimePicker';
 import './HomeScreen.css';
 
-// ── Figma asset URLs (node 167:6399) ─────────────────────────────────────────
-const LOC_FROM_ICON = 'https://www.figma.com/api/mcp/asset/1fae0846-7726-4918-bd11-1440cfe55ce3';
-const LOC_TO_ICON   = 'https://www.figma.com/api/mcp/asset/3874a79e-9277-47d2-a8bb-e87279fbbaf5';
-const RADIO_ON      = 'https://www.figma.com/api/mcp/asset/be603a3f-2236-4f19-be52-e7bc0f91e90d';
-const RADIO_OFF     = 'https://www.figma.com/api/mcp/asset/5b25d791-5e0e-4ec0-99b4-1c66377c4865';
-const CALL_ICON     = 'https://www.figma.com/api/mcp/asset/ffbcd26c-70a4-4cdd-b196-d66b1fa290fc';
+const LOC_FROM_ICON  = '/icons/location-from.svg';
+const LOC_TO_ICON    = '/icons/location-to.svg';
+const RADIO_ON       = '/icons/radio-on.svg';
+const RADIO_OFF      = '/icons/radio-off.svg';
+const CALL_ICON      = '/icons/call-icon.svg';
+const CHEVRON_ARROW  = '/icons/chevron-arrows.svg';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -146,7 +145,7 @@ export default function HomeScreen() {
         <div className="hs-divider" />
 
         {/* To row — opens map-based ride flow, skipping pickup step */}
-        <div className="hs-loc-row">
+        <div className="hs-loc-row destination">
           <div className="hs-loc-icon-wrap">
             <img src={LOC_TO_ICON} alt="" className="hs-loc-icon-img" />
           </div>
@@ -167,8 +166,8 @@ export default function HomeScreen() {
           <button className="hs-dt-pill" onClick={() => setDtpOpen(true)}>
             <span className="hs-dt-pill-text">{formatDatePill(selDate)}</span>
             <span className="hs-dt-arrows">
-              <ChevronUp size={14} strokeWidth={2.5} color="#ff6038" />
-              <ChevronDown size={14} strokeWidth={2.5} color="#ff6038" style={{ marginTop: -2 }} />
+              <img src={CHEVRON_ARROW} alt="" className="hs-arrow-up" />
+              <img src={CHEVRON_ARROW} alt="" className="hs-arrow-down" />
             </span>
           </button>
 
@@ -176,8 +175,8 @@ export default function HomeScreen() {
           <button className="hs-dt-pill" onClick={() => setDtpOpen(true)}>
             <span className="hs-dt-pill-text">{formatTimePill(selHour, selMin, selAMPM)}</span>
             <span className="hs-dt-arrows">
-              <ChevronUp size={14} strokeWidth={2.5} color="#ff6038" />
-              <ChevronDown size={14} strokeWidth={2.5} color="#ff6038" style={{ marginTop: -2 }} />
+              <img src={CHEVRON_ARROW} alt="" className="hs-arrow-up" />
+              <img src={CHEVRON_ARROW} alt="" className="hs-arrow-down" />
             </span>
           </button>
         </div>
