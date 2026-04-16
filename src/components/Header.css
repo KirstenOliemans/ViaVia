@@ -1,0 +1,113 @@
+/* ── Header ── matches Figma 167:6401 */
+.header-pill-wrapper {
+  flex-shrink: 0;
+  padding: 12px 16px;
+  background: #f5f5f5;
+}
+
+.header-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 0.6px solid #e8f0f0;
+  border-radius: 122px;
+  padding: 8px;
+  gap: 8px;
+}
+
+/* Left side ─ avatar + name */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+}
+
+.header-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #f5f5f5;
+  border: 1.2px solid #ffffff;
+  border-radius: 122px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-avatar-img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.header-name-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.header-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.header-name-bold {
+  font-weight: 700;
+}
+
+.header-role {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #000000;
+}
+
+/* Right side ─ bell button */
+.header-bell {
+  flex-shrink: 0;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background: #f5f5f5;
+  border: 1.2px solid #ffffff;
+  border-radius: 122px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s;
+}
+
+
+.header-bell-img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.header-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: #ff6038;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+}

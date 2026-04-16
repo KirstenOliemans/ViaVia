@@ -1,0 +1,355 @@
+/* ══════════════════════════════════════════════════════════════════
+   WalletScreen — pixel-perfect match to Figma node 167:7594
+   ══════════════════════════════════════════════════════════════════ */
+
+.ws-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+}
+
+.ws-root {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  scrollbar-width: none;
+}
+.ws-root::-webkit-scrollbar { display: none; }
+
+/* ── Hero: white card, rounded bottom ──────────────────────────── */
+/* Figma: bg-white rounded-bl-[44px] rounded-br-[44px] */
+.ws-hero {
+  background: #ffffff;
+  border-radius: 0 0 44px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 0;
+}
+
+/* ── Credit balance ────────────────────────────────────────────── */
+.ws-balance-card {
+  width: 100%;
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  /* Figma: conic-gradient from #f5f5f5 → #e8f0f0 → #f5f5f5 */
+  background: conic-gradient(from 90deg at 50% 50%, #f5f5f5 0%, #e8f0f0 30%, #f5f5f5 100%);
+}
+
+.ws-balance-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.ws-balance-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.ws-vv {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #000;
+}
+
+.ws-amount {
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #000;
+}
+
+.ws-balance-sub {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* ── Action buttons ────────────────────────────────────────────── */
+.ws-actions {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.ws-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 102px;
+  padding: 12px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background 0.15s;
+}
+
+.ws-action-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 44px;
+  background: #f7e3de; /* --primary/10 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ws-action-icon--tx {
+  flex-direction: row;
+  gap: 0;
+  padding: 0 6px;
+}
+
+.ws-action-img {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.ws-action-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: #727272;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ── Offers section ────────────────────────────────────────────── */
+/* Overlaps the hero by 20px so it "slides over" it when scrolled  */
+.ws-offers {
+  display: flex;
+  flex-direction: column;
+  margin-top: -20px;          /* pull up over the hero's rounded bottom */
+  border-radius: 20px 20px 0 0;
+  background: #f5f5f5;
+  position: relative;
+  z-index: 1;
+  padding: 0 16px 96px;
+}
+
+/* ── Sticky header: title + chips ──────────────────────────────── */
+.ws-offers-head {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f5f5f5;
+  padding-top: 20px;
+  padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ws-offers-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* ── Filter chips ──────────────────────────────────────────────── */
+.ws-chips-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  overflow-x: auto;
+  flex-shrink: 0;
+  scrollbar-width: none;
+}
+.ws-chips-row::-webkit-scrollbar { display: none; }
+
+.ws-chip {
+  padding: 12px 24px;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  white-space: nowrap;
+  background: #ffffff;
+  color: #49454f;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+.ws-chip.active {
+  background: #e85733;
+  color: #f3f3f3;
+}
+
+/* ── Deal cards ────────────────────────────────────────────────── */
+.ws-deals {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ws-deal-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ws-deal-top {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.ws-deal-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #e5e7eb;
+  display: block;
+}
+
+.ws-deal-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ws-deal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+
+.ws-deal-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #49454f;
+  flex: 1;
+}
+
+.ws-deal-time {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #8e8e93;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ws-deal-desc {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: #49454f;
+  white-space: nowrap;
+}
+
+.ws-deal-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(120, 120, 120, 0.2);
+}
+
+.ws-deal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.ws-deal-credits {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #49454f;
+  flex: 1;
+}
+
+.ws-redeem-btn {
+  background: #f7e3de;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff6038;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+/* ── FAB ───────────────────────────────────────────────────────── */
+.ws-fab {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 72px;
+  height: 72px;
+  border-radius: 44px;
+  background: #ff6038;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 6px 10px rgba(0,0,0,0.15), 0px 2px 3px rgba(0,0,0,0.3);
+  transition: transform 0.15s;
+  z-index: 20;
+}
+.ws-fab:active { transform: scale(0.96); }
+
+.ws-fab-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  filter: brightness(0) invert(1);
+}

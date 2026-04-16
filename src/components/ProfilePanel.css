@@ -1,0 +1,256 @@
+/* ══════════════════════════════════════════════════════════════════
+   ProfilePanel — Figma 211:6118
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Overlay ────────────────────────────────────────────────────── */
+.pp-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 40;
+  pointer-events: none;
+  transition: background 0.42s cubic-bezier(0, 0, 0.2, 1);
+}
+.pp-overlay.visible {
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: all;
+}
+
+/* ── Panel ──────────────────────────────────────────────────────── */
+.pp-panel {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: min(340px, 90%);
+  background: #ffffff;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+
+  /* Closed state */
+  transform: translateX(-100%);
+  opacity: 0;
+  transition:
+    transform 0.36s cubic-bezier(0.4, 0, 1, 1),
+    opacity   0.22s cubic-bezier(0.4, 0, 1, 1);
+}
+.pp-panel.open {
+  transform: translateX(0);
+  opacity: 1;
+  transition:
+    transform 0.42s cubic-bezier(0, 0, 0.2, 1),
+    opacity   0.30s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+/* Figma: px-[20px] py-[12px], flex row items-center */
+.pp-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+/* Left portion: avatar + identity — flex-[1_0_0] gap-[12px] */
+.pp-header-inner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Figma: rgba(116,116,128,0.08) bg, p-[12px], 32px icon → 56px, rounded-[1222px] */
+.pp-avatar-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 1222px;
+  background: rgba(116, 116, 128, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.pp-avatar-img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.pp-identity {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Figma: Roboto SemiBold 16px, #000, tracking 0.15px, line-height 24px */
+.pp-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+/* Figma: Roboto Regular 12px, #333, tracking 0.4px, line-height 16px */
+.pp-role {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: #333333;
+}
+
+/* Figma: 20×20px close icon — no padding, no bg */
+.pp-close {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.pp-close-img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* ── Body: stats + menu in one scrollable container ─────────────── */
+/* Figma node 211:6348: flex-col gap-[16px] p-[20px] flex-[1_0_0] */
+.pp-body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  scrollbar-width: none;
+}
+.pp-body::-webkit-scrollbar { display: none; }
+
+/* ── Stats row ──────────────────────────────────────────────────── */
+/* Figma node 211:6349: flex items-start w-full */
+.pp-stats {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Each stat column: flex-[1_0_0] flex-col gap-[4px] items-center px-[8px] */
+.pp-stat {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  padding: 0 8px;
+}
+
+/* Figma: Roboto Regular 16px, #1d1b20, tracking 0.5px, line-height 24px */
+.pp-stat-val {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #1d1b20;
+  white-space: nowrap;
+}
+
+/* Figma: Roboto Regular 12px, #8e8e93, tracking 0.4px, line-height 16px */
+.pp-stat-lbl {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: #8e8e93;
+}
+
+/* Figma: w-px rgba(120,120,120,0.2) self-stretch rounded-[12px] */
+.pp-stat-sep {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(120, 120, 120, 0.2);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Section separator line ─────────────────────────────────────── */
+/* Figma: h-px w-[300px] rgba(120,120,120,0.2) rounded-[12px] */
+.pp-rule {
+  width: 300px;
+  height: 1px;
+  background: rgba(120, 120, 120, 0.2);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Grouped items (Availability / Favorite places / Ride History) ─ */
+/* Figma node 211:6365: flex-col gap-[16px] w-full flex-[1_0_0] */
+.pp-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* ── Menu item ───────────────────────────────────────────────────── */
+/* Figma: h-[40px] flex gap-[12px] items-center py-[8px] w-full */
+.pp-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: 40px;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Figma: 24×24 leading icon slot */
+.pp-item-icon-slot {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.pp-item-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Figma: Roboto Regular 16px, #1d1b20, tracking 0.5px, line-height 24px */
+.pp-item-label {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #1d1b20;
+  text-align: left;
+}
+
+/* Chevron rendered via Lucide ChevronRight — no extra slot needed */

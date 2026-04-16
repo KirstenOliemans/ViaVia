@@ -1,0 +1,212 @@
+/* ══════════════════════════════════════════════════════════════════
+   NotificationsPanel — Figma 211:5902
+   Animation: same cubic-bezier + duration as the bottom nav pill
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Overlay ────────────────────────────────────────────────────── */
+.np-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 40;
+  pointer-events: none;
+  transition: background 0.42s cubic-bezier(0, 0, 0.2, 1);
+}
+.np-overlay.visible {
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: all;
+}
+
+/* ── Panel ──────────────────────────────────────────────────────── */
+.np-panel {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: min(340px, 90%);
+  background: #ffffff;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.12);
+
+  /* Closed — flies off right, slightly transparent */
+  transform: translateX(100%);
+  opacity: 0;
+  transition:
+    transform 0.36s cubic-bezier(0.4, 0, 1, 1),
+    opacity   0.22s cubic-bezier(0.4, 0, 1, 1);
+}
+.np-panel.open {
+  transform: translateX(0);
+  opacity: 1;
+  transition:
+    transform 0.42s cubic-bezier(0, 0, 0.2, 1),
+    opacity   0.30s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+/* Figma: px-[20px] py-[22px], flex row: title + actions */
+.np-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 22px 20px;
+  gap: 12px;
+}
+
+/* Figma: Roboto Medium 22px, black, tracking 0 */
+.np-title {
+  flex: 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: #000000;
+}
+
+.np-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* Figma: Roboto Regular 14px, #ff6038, tracking 0.25px */
+.np-mark-read {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #ff6038;
+  background: none;
+  border: none;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Figma: ~12px × icon, no container bg — tap target slightly larger */
+.np-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+/* Figma: size-[11.667px] close icon */
+.np-close-img {
+  width: 11.667px;
+  height: 11.667px;
+  display: block;
+}
+
+/* Figma: 1px divider rgba(120,120,120,0.2), inside px-[20px] ctx */
+.np-divider {
+  height: 1px;
+  background: rgba(120, 120, 120, 0.2);
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+/* ── List ───────────────────────────────────────────────────────── */
+.np-list {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.np-list::-webkit-scrollbar { display: none; }
+
+/* ── Card ───────────────────────────────────────────────────────── */
+/* Figma read:   bg white,   border-bottom 1px rgba(116,116,128,0.08) */
+/* Figma unread: bg #fcf4f2, border-bottom 2px #ff6038               */
+.np-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(116, 116, 128, 0.08);
+}
+.np-item--unread {
+  background: #fcf4f2;
+  border-bottom: 2px solid #ff6038;
+}
+
+/* Figma: size-[48px], rounded-[122px], p-[12px] — icon content = 24px */
+.np-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 122px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Figma: directions_car inset-[20.83%_12.5%] ≈ 24px inside 48px circle */
+.np-icon-img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* ── Body ───────────────────────────────────────────────────────── */
+.np-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.np-body-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Figma: Roboto SemiBold 16px, black, tracking 0.15px */
+.np-item-title {
+  flex: 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #000000;
+  min-width: 0;
+}
+
+/* Figma: Roboto Regular 12px, #575757, tracking 0.4px */
+.np-item-time {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: #575757;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Figma: Roboto Regular 14px, #333, tracking 0.25px, line-height 20px */
+.np-item-desc {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #333333;
+}
+
+/* ── Empty ──────────────────────────────────────────────────────── */
+.np-empty {
+  padding: 48px 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #8e8e93;
+}
