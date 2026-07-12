@@ -8,7 +8,7 @@ const USERS_ICON  = '/icons/users-icon.svg';
 const TABS = [
   { id: 'home',      icon: HOME_ICON,   label: 'Home',      cls: 'nav-home-btn' },
   { id: 'wallet',    icon: WALLET_ICON, label: 'Wallet',    cls: 'nav-icon-btn' },
-  { id: 'community', icon: USERS_ICON,  label: 'Community', cls: 'nav-icon-btn' },
+  { id: 'community', icon: USERS_ICON,  label: 'Rides', cls: 'nav-icon-btn' },
 ];
 
 export default function BottomNav() {
